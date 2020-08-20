@@ -13,6 +13,10 @@ https://metanit.com/assembler/articles/MiniOS.php
 `nasm -f bin bootloder.asm -o bootloder`
 - Записываем скомпилированый загрузчик на дискетку в нулевой сектор
 `dd conv=notrunc if=bootloder of=disk.img bs=512 count=1 seek=0`
+- Компилируем yadro
+`nasm -f bin kernel.asm -o kernel`
+- Записываем скомпилированый yadro на дискетку в первый сектор
+`dd conv=notrunc if=kernel of=disk.img bs=512 count=1 seek=1`
 
 
-nasm -f bin bootloder.asm -o bootloder && nasm -f bin kernel.asm -o kernel && dd conv=notrunc if=bootloder of=disk.img bs=512 count=1 seek=0 && dd conv=notrunc if=kernel of=disk.img bs=512 count=1 seek=1 && /usr/local/Cellar/qemu/5.1.0/bin/qemu-system-i386 -fda disk.img
+`nasm -f bin bootloder.asm -o bootloder && nasm -f bin kernel.asm -o kernel && dd conv=notrunc if=bootloder of=disk.img bs=512 count=1 seek=0 && dd conv=notrunc if=kernel of=disk.img bs=512 count=1 seek=1 && /usr/local/Cellar/qemu/5.1.0/bin/qemu-system-i386 -fda disk.img`
