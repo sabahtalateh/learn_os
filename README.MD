@@ -2,7 +2,9 @@
 ## Чтобы загрузиться и загрузить едро
 
 `bootloader/working`
+
 http://learnitonweb.com/2019/10/26/2-writing-an-operating-system-episode-2-bios-uefi-assembler-boot-loader-and-hello-world/
+
 https://metanit.com/assembler/articles/MiniOS.php
 
 - Создаём пустую дискетку `1 474 560 байт (512 * 2880)`
